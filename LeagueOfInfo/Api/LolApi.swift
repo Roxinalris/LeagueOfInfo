@@ -58,19 +58,21 @@ class LolApi {
     static func getItem() -> Promise<[Item]> {
         var items: [Item] = []
         return Promise { seal in
-            AF.request("http://ddragon.leagueoflegends.com/cdn/12.19.1/data/en_US/item.json").response { response in
+            AF.request("http://ddragon.leagueoflegends.com/cdn/12.19.1/data/fr_FR/item.json").response { response in
                 let json = JSON(response.data as Any)
 
                 for item in json.dictionaryValue["data"]!.dictionaryValue.keys{
                     
                     if let name = json.dictionaryValue["data"]?.dictionaryValue[item]?["name"].stringValue{
-                        items.append(Item(name: name))
+                       items.append(Item(name: name,
+                                         id: item))
                     
                        
                     }
                 }
+                seal.fulfill(items)}
             }
-            seal.fulfill(items)}
+            
         
     }
 }
