@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class Champ{
     
     var name : String
@@ -13,7 +14,9 @@ class Champ{
     var info : String
     var stats :String
     var img : String
+    
     init(name : String, titre: String, info : String, stats : String, img : String){
+        
         self.name = name
         self.info = info
         self.titre = titre
