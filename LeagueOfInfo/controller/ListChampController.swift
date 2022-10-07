@@ -9,20 +9,25 @@ import Foundation
 import UIKit
 class ListChampController :  UITableViewController  {
     
+    var champ : Champ? = nil
     var champs : [Champ] = []
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LolApi.getChamps().done {champs in
-            self.champs = champs
-            
+        self.title = "Champion List"
+        refreshChampList()
         }
        
-        
-        
-    }
+    func refreshChampList() {
+            self.champs.removeAll()
+            LolApi.getChamps().done {champs in
+                self.champs = champs
+                self.tableView.reloadData()
+            }
+        }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "section \(section)"
     }
@@ -44,21 +49,18 @@ class ListChampController :  UITableViewController  {
         
         return cell
     }
-/*
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var champ = champs[indexPath.row]
-        let numberOfSection = numberOfSections(in: tableView)
-        
-
-        print(indexPath.row + (champs.count / numberOfSection))
-        
-        if indexPath.section != 0 {
-            champ = champs[indexPath.row + (champs.count / numberOfSection) * indexPath.section]
+        self.performSegue(withIdentifier: "listToChampion", sender: champs[indexPath.row])
+       
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "listToChampion" {
+            if let destination = segue.destination as? ChampViewController, let safeChamp = sender as? Champ {
+                destination.champ = safeChamp
+            }
         }
-        
-        let viewController = ChampViewController(frame: tableView.frame, champ: champ)
-        
-        navigationController?.pushViewController(viewController, animated: true)
-    }*/
+    }
 }

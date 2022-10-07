@@ -30,12 +30,14 @@ class LolApi {
                     //print (json.dictionaryValue["data"]?.dictionaryValue[champName]?["name"].stringValue)
                     
                     if let name = json.dictionaryValue["data"]?.dictionaryValue[champName]?["name"].stringValue , let titre  = json.dictionaryValue["data"]?.dictionaryValue[champName]?["title"].stringValue , let stats = json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["info"]?["attack"].stringValue,
-                      let img =  json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["image"]?["sprite"].stringValue{
+                      let img =  json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["image"]?["sprite"].stringValue,
+                    let dsc = json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["blurb"]?.stringValue{
                         champs.append(Champ(name: name,
                                             titre: titre,
                                          
                                             stats: stats,
-                                            img: img
+                                            img: img,
+                                            dsc: dsc
                                             
                                            )
                                       
@@ -63,9 +65,12 @@ class LolApi {
 
                 for item in json.dictionaryValue["data"]!.dictionaryValue.keys{
                     
-                    if let name = json.dictionaryValue["data"]?.dictionaryValue[item]?["name"].stringValue{
+                    if let name = json.dictionaryValue["data"]?.dictionaryValue[item]?["name"].stringValue, let purchasable = json.dictionaryValue["data"]?.dictionaryValue[item]?.dictionaryValue["gold"]?.dictionaryValue["purchasable"]?.boolValue{
                        items.append(Item(name: name,
-                                         id: item))
+                                         id: item ,
+                                         purchasable: purchasable
+                            
+                                    ))
                     
                        
                     }

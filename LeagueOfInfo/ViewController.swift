@@ -9,7 +9,13 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var position: UIImageView!
     @IBOutlet weak var img_item_1: UIImageView!
+    @IBOutlet weak var img_item_2: UIImageView!
+    @IBOutlet weak var img_item_3: UIImageView!
+    @IBOutlet weak var img_item_4: UIImageView!
+    @IBOutlet weak var img_item_5: UIImageView!
+    @IBOutlet weak var img_item_6: UIImageView!
     @IBOutlet weak var itemCame: UILabel!
     @IBOutlet weak var item_name_3: UILabel!
     @IBOutlet weak var item_name_2: UILabel!
@@ -41,6 +47,7 @@ class ViewController: UIViewController {
         print("LauchCall")
         self.getChamps()
         self.getItem()
+        self.getposition()
         super.viewDidLoad()
         
     }
@@ -106,7 +113,7 @@ class ViewController: UIViewController {
             var i5 = items[Int.random(in:0...items.count-1)]
             
             while bool == false{
-                if(i.name == i1.name || i.name == i2.name || i.name == i3.name || i.name == i4.name || i.name == i5.name || i1.name == i2.name  || i1.name == i3.name || i1.name == i4.name || i1.name == i5.name || i2.name == i3.name || i2.name == i4.name || i2.name == i5.name || i3.name == i4.name || i3.name == i5.name || i4.name == i5.name ){
+                if(i.name == i1.name || i.name == i2.name || i.name == i3.name || i.name == i4.name || i.name == i5.name || i1.name == i2.name  || i1.name == i3.name || i1.name == i4.name || i1.name == i5.name || i2.name == i3.name || i2.name == i4.name || i2.name == i5.name || i3.name == i4.name || i3.name == i5.name || i4.name == i5.name || i.purchasable == false || i1.purchasable == false || i2.purchasable == false || i3.purchasable == false || i4.purchasable == false || i5.purchasable == false){
                     i = items[Int.random(in:0...items.count-1)]
                     i1 = items[Int.random(in:0...items.count-1)]
                     i2 = items[Int.random(in:0...items.count-1)]
@@ -139,13 +146,43 @@ class ViewController: UIViewController {
          
             
             print(i.id)
+            print(i1.id)
+            print(i2.id)
+            print(i3.id)
+            print(i4.id)
+            print(i5.id)
             
             
-                if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i.id).png"), let imgData = try? Data(contentsOf: url){
-                    let image = UIImage(data: imgData)
-                    self.img_item_1.image = image
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_1.image = image
                     
-                }
+            }
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i1.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_2.image = image
+                
+            }
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i2.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_3.image = image
+                
+            }
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i3.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_4.image = image
+                
+            }
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i4.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_5.image = image
+                
+            }
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i5.id).png"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.img_item_6.image = image
+                
+            }
             
             
             
@@ -156,6 +193,11 @@ class ViewController: UIViewController {
             //}else{
                // self.nom.text = "rick"
         }
+    }
+    
+    func getposition(){
+        let i = Int.random(in:1...5 )
+        self.position.image =  UIImage(named: "Position_Gold-\(i).png" )
     }
     
 

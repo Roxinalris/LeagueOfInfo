@@ -8,27 +8,34 @@
 import Foundation
 import UIKit
 class ChampViewController: UIViewController{
+    
+    
+    @IBOutlet weak var name_champ: UILabel!
+    @IBOutlet weak var sprit_champ: UIImageView!
+    @IBOutlet weak var title_champ: UILabel!
+    
+    @IBOutlet weak var desc_champ: UILabel!
+    var champ: Champ?
+    
     override func viewDidLoad() {
-        super.viewDidLoad()       
+        super.viewDidLoad()
+       
+        if let safeChamp = self.champ {
+            name_champ.text = safeChamp.name
+            title_champ.text = safeChamp.titre
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/\(safeChamp.name)_0.jpg"), let imgData = try? Data(contentsOf: url){
+                let image = UIImage(data: imgData)
+                self.sprit_champ.image = image
+            }
+            desc_champ.text = safeChamp.desc
+        }
+       
+              
     }
-    private let champ: Champ
-    
-    // initialisation d'une vue à la volé
-    init(frame: CGRect, champ: Champ) {
-        self.champ = champ
-        super.init(nibName: nil, bundle: nil)
-        
-        self.title = self.champ.name
-        self.view = UIView(frame: frame)
-        self.view.backgroundColor = UIColor.random
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+   
 }
 
-extension UIColor {
+/*extension UIColor {
     static var random: UIColor {
         return UIColor(
             red: .random(in: 0...1),
@@ -40,8 +47,8 @@ extension UIColor {
 }
 
 
-//let rootViewController = ChampViewController()
-//rootViewController.title = "Pokedex"
+let rootViewController = ChampViewController()
+rootViewController.title = "Pokedex"
 
-//let navigationController = UINavigationController(rootViewController: rootViewController)
-//PlaygroundPage.current.liveView = navigationController.view
+let navigationController = UINavigationController(rootViewController: rootViewController)
+PlaygroundPage.current.liveView = navigationController.view*/

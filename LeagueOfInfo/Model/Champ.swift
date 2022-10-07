@@ -14,14 +14,16 @@ class Champ{
 
     var stats :String
     var img : String
+    var desc : String
     
-    init(name : String, titre: String, stats : String, img : String){
+    init(name : String, titre: String, stats : String, img : String, dsc : String){
         
         self.name = name
     
         self.titre = titre
         self.stats = stats
         self.img = img
+        self.desc = dsc
         
     }
 }
