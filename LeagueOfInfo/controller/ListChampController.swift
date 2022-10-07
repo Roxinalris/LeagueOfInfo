@@ -14,12 +14,17 @@ class ListChampController :  UITableViewController  {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         LolApi.getChamps().done {champs in
             self.champs = champs
+            
         }
        
-        super.viewDidLoad()
         
+        
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "section \(section)"
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -29,7 +34,31 @@ class ListChampController :  UITableViewController  {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "ListChampController")
+            if indexPath.section == 0 {
+                let champ = champs[indexPath.row]
+                cell.textLabel?.text = champ.name
+            } else {
+                let champ = champs[indexPath.row + (champs.count / numberOfSections(in: tableView)) * indexPath.section]
+                cell.textLabel?.text = champ.name
+            }
         
         return cell
     }
+/*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var champ = champs[indexPath.row]
+        let numberOfSection = numberOfSections(in: tableView)
+        
+
+        print(indexPath.row + (champs.count / numberOfSection))
+        
+        if indexPath.section != 0 {
+            champ = champs[indexPath.row + (champs.count / numberOfSection) * indexPath.section]
+        }
+        
+        let viewController = ChampViewController(frame: tableView.frame, champ: champ)
+        
+        navigationController?.pushViewController(viewController, animated: true)
+    }*/
 }

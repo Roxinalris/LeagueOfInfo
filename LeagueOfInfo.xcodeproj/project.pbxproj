@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A7D131928E823820094343A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D131828E823820094343A /* HomeView.swift */; };
 		4A7D131B28E82AC90094343A /* ListChampController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D131A28E82AC90094343A /* ListChampController.swift */; };
+		4AB892AC28F00E5800789E6B /* ChampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB892AB28F00E5800789E6B /* ChampViewController.swift */; };
 		4AB8E7A128EEB31E000EDC46 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8E7A028EEB31E000EDC46 /* Item.swift */; };
 		4AB8E7A528EF024F000EDC46 /* Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB8E7A428EF024F000EDC46 /* Load.swift */; };
 		4ABFBBF128E715B6002F1D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFBBF028E715B6002F1D4D /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		4A7D131828E823820094343A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4A7D131A28E82AC90094343A /* ListChampController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListChampController.swift; sourceTree = "<group>"; };
 		4A7D5E61B57B3249CFB68A91 /* Pods-LeagueOfInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueOfInfo.release.xcconfig"; path = "Target Support Files/Pods-LeagueOfInfo/Pods-LeagueOfInfo.release.xcconfig"; sourceTree = "<group>"; };
+		4AB892AB28F00E5800789E6B /* ChampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampViewController.swift; sourceTree = "<group>"; };
 		4AB8E7A028EEB31E000EDC46 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		4AB8E7A428EF024F000EDC46 /* Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Load.swift; sourceTree = "<group>"; };
 		4ABFBBED28E715B6002F1D4D /* LeagueOfInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueOfInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				4A7D131828E823820094343A /* HomeView.swift */,
 				4A7D131A28E82AC90094343A /* ListChampController.swift */,
 				4AB8E7A428EF024F000EDC46 /* Load.swift */,
+				4AB892AB28F00E5800789E6B /* ChampViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				4AB8E7A128EEB31E000EDC46 /* Item.swift in Sources */,
 				4ABFBBF128E715B6002F1D4D /* AppDelegate.swift in Sources */,
 				4ABFBBF328E715B6002F1D4D /* SceneDelegate.swift in Sources */,
+				4AB892AC28F00E5800789E6B /* ChampViewController.swift in Sources */,
 				4A7D131B28E82AC90094343A /* ListChampController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

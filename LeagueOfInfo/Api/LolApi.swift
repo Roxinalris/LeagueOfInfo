@@ -29,11 +29,11 @@ class LolApi {
                     
                     //print (json.dictionaryValue["data"]?.dictionaryValue[champName]?["name"].stringValue)
                     
-                    if let name = json.dictionaryValue["data"]?.dictionaryValue[champName]?["name"].stringValue , let titre  = json.dictionaryValue["data"]?.dictionaryValue[champName]?["title"].stringValue , let info = json.dictionaryValue["data"]?.dictionaryValue[champName]?["blurb"].stringValue, let stats = json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["info"]?["attack"].stringValue,
+                    if let name = json.dictionaryValue["data"]?.dictionaryValue[champName]?["name"].stringValue , let titre  = json.dictionaryValue["data"]?.dictionaryValue[champName]?["title"].stringValue , let stats = json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["info"]?["attack"].stringValue,
                       let img =  json.dictionaryValue["data"]?.dictionaryValue[champName]?.dictionaryValue["image"]?["sprite"].stringValue{
                         champs.append(Champ(name: name,
                                             titre: titre,
-                                            info: info,
+                                         
                                             stats: stats,
                                             img: img
                                             

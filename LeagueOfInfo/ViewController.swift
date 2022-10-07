@@ -11,6 +11,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var img_item_1: UIImageView!
     @IBOutlet weak var itemCame: UILabel!
+    @IBOutlet weak var item_name_3: UILabel!
+    @IBOutlet weak var item_name_2: UILabel!
+    @IBOutlet weak var item_name_4: UILabel!
+    @IBOutlet weak var item_name_5: UILabel!
+    @IBOutlet weak var item_name_6: UILabel!
     @IBOutlet weak var descriptionChamp: UILabel!
     @IBOutlet weak var nameChamp: UILabel!
     @IBOutlet weak var titleChamp: UILabel!
@@ -25,7 +30,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         var _isLoading: Bool = false
         
-        self.descriptionChamp.text = "champ.info"
+   
         self.nameChamp.text = "champ.name"
         self.titleChamp.text = "champ.titre"
         self.itemCame.text = "item"
@@ -59,15 +64,15 @@ class ViewController: UIViewController {
             }*/
             
             
-            print(champ.info)
+            //print(champ.info)
             print(champ.name)
             print(champ.titre)
             
-            self.descriptionChamp.text = champ.info
+            //self.descriptionChamp.text = champ.info
             self.nameChamp.text = champ.name
             self.titleChamp.text = champ.titre
             
-            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/\(champ.name)_0.jpg"), let imgData = try? Data(contentsOf: url){
+            if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/\(champ.name)_0.jpg"), let imgData = try? Data(contentsOf: url){
                 let image = UIImage(data: imgData)
                 self.img.image = image
             }
@@ -89,21 +94,57 @@ class ViewController: UIViewController {
         
         }
     func getItem() {
+        var bool : Bool = false
         LolApi.getItem().done {items in
             self.items = items
            
-            let i = items[Int.random(in:0...items.count-1)]
+            var i = items[Int.random(in:0...items.count-1)]
+            var i1 = items[Int.random(in:0...items.count-1)]
+            var i2 = items[Int.random(in:0...items.count-1)]
+            var i3 = items[Int.random(in:0...items.count-1)]
+            var i4 = items[Int.random(in:0...items.count-1)]
+            var i5 = items[Int.random(in:0...items.count-1)]
+            
+            while bool == false{
+                if(i.name == i1.name || i.name == i2.name || i.name == i3.name || i.name == i4.name || i.name == i5.name || i1.name == i2.name  || i1.name == i3.name || i1.name == i4.name || i1.name == i5.name || i2.name == i3.name || i2.name == i4.name || i2.name == i5.name || i3.name == i4.name || i3.name == i5.name || i4.name == i5.name ){
+                    i = items[Int.random(in:0...items.count-1)]
+                    i1 = items[Int.random(in:0...items.count-1)]
+                    i2 = items[Int.random(in:0...items.count-1)]
+                    i3 = items[Int.random(in:0...items.count-1)]
+                    i4 = items[Int.random(in:0...items.count-1)]
+                    i5 = items[Int.random(in:0...items.count-1)]
+                    print("if")
+                    
+                }else{
+                    print("else")
+                    bool = true
+                }
+                
+            }
             print(i.name)
+            print(i1.name)
+            print(i2.name)
+            print(i3.name)
+            print(i4.name)
+            print(i5.name)
             self.itemCame.text = i.name
+            self.item_name_2.text = i1.name
+            self.item_name_3.text = i2.name
+            self.item_name_4.text = i3.name
+            self.item_name_5.text = i4.name
+            self.item_name_6.text = i5.name
+            
+            
             
          
             
-            
+            print(i.id)
             
             
                 if let url = URL(string: "http://ddragon.leagueoflegends.com/cdn/12.19.1/img/item/\(i.id).png"), let imgData = try? Data(contentsOf: url){
                     let image = UIImage(data: imgData)
                     self.img_item_1.image = image
+                    
                 }
             
             

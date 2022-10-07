@@ -8,5 +8,7 @@
 import Foundation
 import UIKit
 class Load : UIViewController {
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()     
+    }
 }
