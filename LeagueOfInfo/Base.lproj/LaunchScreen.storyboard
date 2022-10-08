@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ça CHARGEEEE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l4-xd-XKf">
-                                <rect key="frame" x="174" y="261" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ça CHARGEEEE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1l4-xd-XKf">
+                                <rect key="frame" x="43" y="261" width="326" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -26,10 +26,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1l4-xd-XKf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="4oU-A2-DI6"/>
                             <constraint firstItem="1l4-xd-XKf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="217" id="FSd-y3-T1p"/>
+                            <constraint firstItem="1l4-xd-XKf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="aNc-HN-1Dp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1l4-xd-XKf" secondAttribute="trailing" constant="45" id="bPS-ZH-LMK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1l4-xd-XKf" secondAttribute="bottom" constant="580" id="gNG-fm-dfK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1l4-xd-XKf" secondAttribute="trailing" constant="198" id="kmQ-Vu-rEN"/>
                         </constraints>
                     </view>
                 </viewController>

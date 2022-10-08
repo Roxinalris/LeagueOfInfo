@@ -37,17 +37,17 @@ class ViewController: UIViewController {
         var _isLoading: Bool = false
         
    
-        self.nameChamp.text = "champ.name"
+      /*  self.nameChamp.text = "champ.name"
         self.titleChamp.text = "champ.titre"
         self.itemCame.text = "item"
         
         self.img.image =  UIImage(named: "League_of_Legends_Logo.png" )
-        self.img_item_1.image = UIImage(named: "League_of_Legends_Logo.png")
+        self.img_item_1.image = UIImage(named: "League_of_Legends_Logo.png")*/
         
         print("LauchCall")
         self.getChamps()
         self.getItem()
-        self.getposition()
+        
         super.viewDidLoad()
         
     }
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
         
         }
     func getItem() {
-        var bool : Bool = false
+        
         LolApi.getItem().done {items in
             self.items = items
            
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
             var i3 = items[Int.random(in:0...items.count-1)]
             var i4 = items[Int.random(in:0...items.count-1)]
             var i5 = items[Int.random(in:0...items.count-1)]
-            
+            var bool : Bool = false
             while bool == false{
                 if(i.name == i1.name || i.name == i2.name || i.name == i3.name || i.name == i4.name || i.name == i5.name || i1.name == i2.name  || i1.name == i3.name || i1.name == i4.name || i1.name == i5.name || i2.name == i3.name || i2.name == i4.name || i2.name == i5.name || i3.name == i4.name || i3.name == i5.name || i4.name == i5.name || i.purchasable == false || i1.purchasable == false || i2.purchasable == false || i3.purchasable == false || i4.purchasable == false || i5.purchasable == false){
                     i = items[Int.random(in:0...items.count-1)]
@@ -184,7 +184,7 @@ class ViewController: UIViewController {
                 
             }
             
-            
+            self.getposition()
             
             //image.image = UIImage(named: "\(Int.random(in:0...100)%2).jpg")
             //if (Int.random(in: 0...100)%2 == 1){

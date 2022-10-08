@@ -143,6 +143,7 @@
 		4ABFBBEF28E715B6002F1D4D /* LeagueOfInfo */ = {
 			isa = PBXGroup;
 			children = (
+				4AD4803228F1513B006CA995 /* Music */,
 				4A7D131728E823560094343A /* controller */,
 				4ABFBC2428E71665002F1D4D /* Model */,
 				4ABFBC2028E71611002F1D4D /* Api */,
@@ -187,9 +188,16 @@
 			children = (
 				4ABFBC2528E7167B002F1D4D /* Champ.swift */,
 				4AB8E7A028EEB31E000EDC46 /* Item.swift */,
-				4AB892AF28F07C1D00789E6B /* videoplayback.mp4 */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4AD4803228F1513B006CA995 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				4AB892AF28F07C1D00789E6B /* videoplayback.mp4 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 		7569BA41CF75542384E8284A /* Frameworks */ = {
